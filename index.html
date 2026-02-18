@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BunnyOffice Active</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            background-color: #0f0f0f; /* Черный фон */
+            color: #ffffff;
+            font-family: sans-serif;
+            margin: 0; padding: 16px;
+        }
+        .header { margin-bottom: 20px; font-size: 20px; font-weight: bold; }
+        
+        /* Карточка сделки */
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid #333;
+        }
+        
+        /* Верхняя часть: Сумма и Профит */
+        .top-row {
+            display: flex; justify-content: space-between; margin-bottom: 15px;
+            border-bottom: 1px solid #333; padding-bottom: 10px;
+        }
+        .amount { font-size: 18px; font-weight: bold; }
+        .profit { color: #4ade80; background: #143020; padding: 4px 8px; border-radius: 6px; font-size: 14px;}
+
+        /* Схема Клиент -> Контрагент */
+        .flow { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #bbb; }
+        .arrow { color: #555; font-size: 20px; }
+        
+        /* Кнопка */
+        button {
+            width: 100%; margin-top: 15px; padding: 10px;
+            background: #2a2a2a; border: none; color: white;
+            border-radius: 8px; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">🔥 В работе: 2 сделки</div>
+
+    <div class="card">
+        <div class="top-row">
+            <div class="amount">15,000 USDT</div>
+            <div class="profit">+120 $</div>
+        </div>
+        <div class="flow">
+            <div>
+                <small>Клиент</small><br>
+                👤 <b>@vip_client</b>
+            </div>
+            <div class="arrow">➔</div>
+            <div style="text-align: right;">
+                <small>Контрагент</small><br>
+                🏦 <b>Сити Обмен</b>
+            </div>
+        </div>
+        <button onclick="alert('Закрываем сделку...')">Завершить</button>
+    </div>
+
+    <div class="card">
+        <div class="top-row">
+            <div class="amount">500,000 RUB</div>
+            <div class="profit">+3,500 ₽</div>
+        </div>
+        <div class="flow">
+            <div>
+                <small>Клиент</small><br>
+                👤 <b>Иван (Нал)</b>
+            </div>
+            <div class="arrow">➔</div>
+            <div style="text-align: right;">
+                <small>Контрагент</small><br>
+                🏦 <b>Партнер Китай</b>
+            </div>
+        </div>
+        <button onclick="alert('Закрываем сделку...')">Завершить</button>
+    </div>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.expand(); // Раскрыть на весь экран
+    </script>
+</body>
+</html>
